@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180607085321) do
+ActiveRecord::Schema.define(version: 20180611022748) do
 
   create_table "bookings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "status",                           default: 0
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 20180607085321) do
     t.string   "email"
     t.string   "address"
     t.string   "phone_number"
-    t.integer  "role"
+    t.integer  "role",                   default: 0
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "encrypted_password",     default: "", null: false
