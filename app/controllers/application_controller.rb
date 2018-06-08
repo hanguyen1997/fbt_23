@@ -4,9 +4,18 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :load_categories
+  before_action :store_current_location, unless: :devise_controller?
 
   def load_categories
     @super_categories = Category.available.super
+  end
+
+  def store_current_location
+    store_location_for(:user, request.fullpath) unless request.xhr?
+  end
+
+  def after_sign_in_path_for(resource)
+    resource.admin? ? admin_root_url : stored_location_for(resource)
   end
 
   private

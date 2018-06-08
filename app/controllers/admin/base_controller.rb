@@ -8,8 +8,7 @@ module Admin
 
     def authenticate_admin
       return if logged_in_as_admin?
-      flash[:danger] = t "alert.permission_denied"
-      redirect_to new_user_session_path
+      redirect_to new_user_session_path, alert: t("alert.permission_denied")
     end
   end
 end
