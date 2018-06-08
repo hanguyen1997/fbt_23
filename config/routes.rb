@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/history", to: "histories#index"
 
+  devise_for :users
   resources :tours, only: %i(index show)
   resources :users, only: :show
   resources :categories, only: :show
