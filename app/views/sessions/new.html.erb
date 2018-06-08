@@ -1,0 +1,25 @@
+<div class="page-content container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="login-wrapper">
+        <div class="box">
+          <div class="content-wrap">
+            <h6><%= t ".login" %></h6>
+            <%= form_for :session, url: login_path do |f| %>
+              <%= f.email_field :email, class: "form-control", placeholder: t(".email") %>
+              <%= f.password_field :password, class: "form-control", placeholder: t(".password") %>
+              <div class="action">
+                <%= f.submit t(".login"), class: "btn btn-primary signup" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="already">
+          <p><%= t ".dont_have_account" %></p>
+          <a href="#"><%= t ".signup" %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

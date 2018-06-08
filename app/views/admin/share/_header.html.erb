@@ -1,0 +1,30 @@
+<div class="header">
+     <div class="container">
+        <div class="row">
+           <div class="col-md-5">
+              <div class="logo">
+                 <h1><%= link_to t(".admin_panel"), admin_root_path %></h1>
+              </div>
+           </div>
+
+           <div class="col-md-2 col-md-offset-5">
+              <div class="navbar navbar-inverse" role="banner">
+                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                    <ul class="nav navbar-nav">
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          <%= t ".my_account" %> <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInUp">
+                          <li><a href="#"><%= t ".profile" %></a></li>
+                          <li><%= link_to t(".goto_tour_page"), root_path %></li>
+                          <li><%= link_to t(".logout"), logout_path, method: :delete %></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav>
+              </div>
+           </div>
+        </div>
+     </div>
+</div>

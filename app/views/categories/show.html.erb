@@ -1,0 +1,14 @@
+<% content_for :head_decor do %>
+  <%= render "share/slider" %>
+<% end %>
+<div class="container-fluid">
+  <div class="tours popular-tour">
+    <div class="container">
+      <h2><%= @category.name %></h2>
+      <%= will_paginate @tours %>
+      <div class="row">
+        <%= render @tours %>
+      </div>
+    </div>
+  </div>
+</div>

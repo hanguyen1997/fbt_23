@@ -1,0 +1,296 @@
+en:
+  alert:
+    login_success: "Log in successfully. Welcome back %{name}!"
+    logout_success: "See you late!"
+    invalid_login: "Invalid Email or Password"
+    permission_denied: "Permission denied"
+    booking_updated: "Booking has been updated"
+    booking_not_found: "Booking not found"
+    booking_expired: "This booking expired"
+    confirm: "Are you sure?"
+    user_not_found: "User not found"
+    please_log_in: "Please log in first"
+    thanks_for_rating: "Thanks for your rating!"
+    retry: "Something went wrong, please try again!"
+    rating_not_found: "Rating not found"
+    category_not_found: "Category not found"
+    has_subcategories: "This category contains sub-category, can not delete!"
+    has_pending: "This category has pending booking, can not delete!"
+    delete_category_success: "Category has been deleted!"
+    are_you_sure: "Are you sure?"
+  layouts:
+    application:
+      tour: "Tour Booking"
+    admin:
+      application:
+        title: "Admin Panel"
+    login:
+      tour: "Tour"
+  home_page:
+    home:
+      newest_tours: "Newest Tours"
+      newest_description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae eos beatae accusantium. Quia delectus error mollitia, expedita totam quo."
+      recommended_tours: "Recommended Tours"
+      recommended_description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae eos beatae accusantium. Quia delectus error mollitia, expedita totam quo."
+      popular_tours: "Popular Tours"
+      popular_description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae eos beatae accusantium. Quia delectus error mollitia, expedita totam quo."
+      seemore: "See more ..."
+      rating: "Rating: %{rating}"
+  share:
+    top_navigation:
+      home: "Home"
+      tour: "Tour"
+      greeting: "Hi, %{name}"
+      home: "Home"
+      about: "About"
+      contact: "Contact"
+      account: "Account"
+      profile: "Profile"
+      booking_history: "Booking history"
+      logout: "Log out"
+    search:
+      search: "Search"
+    error_messages_detail:
+      error: "error"
+  sessions:
+    new:
+      email: "Email address"
+      password: "Password"
+      login: "Log in"
+      home: "Home"
+      about: "About"
+      contact: "Contact"
+      login: "Log in"
+      signup: "Sign up"
+      dont_have_account: "Don't have an account yet?"
+    search:
+      search: "Search Tour"
+    footer:
+      signup_now: "Sign Up Now"
+      signup_footer: "Sign up for more promotion"
+      copyright_html: "Copyright&copy;2018"
+  admin:
+    dashboard:
+      index:
+        recent_bookings: "Recently Bookings"
+        tour_name: "Tour name"
+        user_name: "User name"
+        booked_at: "Booked at"
+        start_day: "Start day"
+        price: "Price"
+        status: "Status"
+        action: "Action"
+        view: "View"
+    share:
+      header:
+        admin_panel: "Admin Panel"
+        my_account: "My account"
+        profile: "Profile"
+        logout: "Log out"
+        goto_tour_page: "Goto Tour page"
+      sidebar:
+        bookings: "Bookings"
+        tours: "Tours"
+        users: "Users"
+        categories: "Categories"
+        statistics: "Statistics"
+    bookings:
+      index:
+        bookings_list: "Bookings List"
+        create: "Create a Booking"
+        tour_name: "Tour name"
+        user_name: "User name"
+        booked_at: "Booked at"
+        start_day: "Start day"
+        price: "Price"
+        status: "Status"
+        action: "Action"
+        view: "View"
+        edit: "Edit"
+      show:
+        booking_details: "Booking Details"
+        edit: "Edit"
+        approve: "Approve"
+        reject: "Reject"
+        booking_no: "Booking #%{no}"
+        customer_name: "Customer name"
+        tour_name: "Tour name"
+        booked_at: "Booked at"
+        start_day: "Start day"
+        end_day: "End day"
+        price: "Price"
+        quantity: "Number of booking"
+        total: "Total"
+        status: "Status"
+      booking:
+        view_tour: "View Tour"
+        write_review: "Write Review"
+    categories:
+      index:
+        categories: "Categories"
+      show:
+        list_tours: "List tours"
+        create_new_tour: "Create New Tour"
+      form:
+        save_category: "Save Category"
+        name: "Category name"
+        description: "Description"
+        parent: "Parent category"
+      category:
+        delete: "Delete"
+    tours:
+      index:
+        tours_list: "Tours list"
+        create_tour: "Create a tour"
+        tour_name: "Tour name"
+        short_description: "Short description"
+        category_tour: "Category's tour"
+        itinerary: "Itinerary"
+        image: "Image"
+        action: "Action"
+      show:
+        tour_detail: "Tour details"
+        create_detail: "Create a tour detail"
+        tour_no: "Tour No #%{no}"
+        content: "Content"
+        rating: "Rating"
+        error_id_tour: "Tour does not exist"
+      new:
+        create_tour: "Create tour"
+      form_tour:
+        name: "Tour name"
+        itinerary: "Itinerary"
+        short_description: "Short description"
+        content: "Content"
+        category: "Category"
+        image: "Image"
+        help_block: "(.jpg, .jpeg, .gif, .png)"
+        submit: "Submit"
+      create:
+        creat_success: "Created successfully"
+        error_id_tour: "Tour does not exist"
+      edit:
+        edit_tour: "Edit tour"
+      update:
+        tour_updated: "Tour updated"
+      destroy:
+        error_delete: "Can not delete this tour"
+        delete_success: "Deleted successfully"
+      tour:
+        view: "View"
+        edit: "Edit"
+        delete: "Delete"
+        make_sure: "Are you sure?"
+    description_details:
+      description_detail:
+        detail: "##Detail"
+        price: "Price"
+        start_day: "Start day"
+        end_day: "End day"
+        edit_tour_detail: "Edit tour detail"
+        delete: "Delete"
+        make_sure: "Are you sure?"
+      new:
+        create_detail: "Create detail"
+        error_tour_id: "Tour does not exist"
+      edit:
+        edit_detail: "Edit detail"
+        error_detail_id: "Detail does not exist"
+      update:
+        detail_updated: "Detail Updated"
+      create:
+        create_success: "Created successfully"
+        error_tour_id: "Detail does not exist"
+      destroy:
+        error_delete: "Can not delete this detail"
+        delete_success: "Deleted successfully"
+      form_detail:
+        price: "Price"
+        start_day: "Start day"
+        end_day: "End day"
+        submit: "Submit"
+  dashboard:
+    index:
+      recent_bookings: "Recent Bookings"
+      tour_name: "Tour name"
+      user_name: "User name"
+      booked_at: "Booked at"
+      status: "Status"
+      action: "Action"
+      view: "View"
+  tours:
+    show:
+      error_noti: "Tour does not exist"
+      itinerary: "Itinerary"
+      options: "Options"
+      tour_detail: "Tour detail"
+      book_tour: "Book Tour"
+      customer_review: "Customer reviews"
+      content: "Content"
+      rating: "Rating: %{rating}"
+      also_like: "You may also like"
+      submit_rating: "Submit rating"
+      rating_me: "Rating me: "
+    index:
+      alltours: "All Tours"
+      rating: "Rating: %{rating}"
+      no_result: "No result"
+    newest:
+      newest_tours: "Newest Tours"
+    detail:
+      tour_detail: "Tour detail"
+      book_tour: "Book tour"
+      start_day: "Start day:"
+      end_day: "End day:"
+      price: "Price:"
+  categories:
+    show:
+      rating: "Rating: %{rating}"
+      error_noti: "Category does not exist"
+  histories:
+    index:
+      bookings_list: "Bookings List"
+      tour_name: "Tour name"
+      booked_at: "Booked at"
+      start_day: "Start day"
+      price: "Price"
+      quantity: "Quantity"
+      total: "Total"
+      status: "Status"
+      action: "Action"
+      view_tour: "View Tour"
+      write_review: "Write Review"
+      nothing_to_show: "Nothing to show"
+  ratings:
+    form:
+      thanks_for_rating: "Thanks for rating!"
+  time:
+    formats:
+      date_month_year: "%A, %d/%m/%y"
+  reviews:
+    form:
+      leave_review: "Leave review"
+      review: "Review"
+    review:
+      ago: "%{time} ago"
+  bookings:
+    create:
+      successed: "Booked successfully. Please check your email!"
+      failed: "Quantity must be number, greater than 0 / can't be blank"
+    new:
+      booking_tour: "Booking Tour"
+      tour_name: "Tour`s name"
+      price: "Price"
+      start_day: "Start day"
+      end_day: "End day"
+      quantity: "Number of people"
+      book: "Book"
+      total: "Total"
+      danger_mess: "Tour detail does not exits"
+    mail:
+      hi: "Hi, %{name}"
+      noti_message: "Your tour has been successfully booked."
+      response_mail_content: "Your booking has been %{status}"
+      have_a_nice_trip: "Have a nice trip!"
+  error_check_day: "Invalid date"
+  error_image_size: "should be less than 5MB"

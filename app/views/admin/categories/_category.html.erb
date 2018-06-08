@@ -1,0 +1,23 @@
+<% if category.childs.any? %>
+  <li>
+    <%= link_to category.name, admin_category_path(category) %>
+    <span>
+      <%= link_to t(".delete"), admin_category_path(category),
+        class: "label label-default",
+        method: :delete, data: { confirm: t("alert.are_you_sure")} %>
+    </span>
+  </li>
+  <ul id="cate-<%= category.id %>">
+    <%= render category.childs %>
+  </ul>
+<% else %>
+  <li>
+    <%= link_to category.name, admin_category_path(category) %>
+    <span>
+      <%= link_to t(".delete"), admin_category_path(category),
+        class: "label label-default",
+        method: :delete, data: { confirm: t("alert.are_you_sure")} %>
+    </span>
+  </li>
+  <ul id="cate-<%= category.id %>"></ul>
+<% end %>

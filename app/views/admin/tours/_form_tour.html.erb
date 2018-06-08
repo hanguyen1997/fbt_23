@@ -1,0 +1,35 @@
+ <%= form_for [:admin, @tour] do |f| %>
+  <%= render "share/error_messages_tour" %>
+  <fieldset>
+    <div class="form-group">
+      <%= f.label :name, t(".name") %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :itinerary, t(".itinerary") %>
+      <%= f.text_field :itinerary, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :short_description, t(".short_description") %>
+      <%= f.text_field :short_description, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :content, t(".content") %>
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :image, t(".image"), class: "col-md-2 control-label" %>
+      <%= f.file_field :image, accept: "image/jpeg, image/gif, image/png" %>
+      <div class="col-md-10">
+        <p class="help-block">
+          <%= t ".help_block" %>
+        </p>
+      </div>
+    </div>
+    <%= f.label :category, t(".category"), class: "col-md-2 control-label" %>
+      <div class="col-md-10">
+        <%= f.select :category_id, options_for_select(@categories.collect{|c| [c.name, c.id]}) %>
+      </div>
+  </fieldset>
+  <%= f.submit t(".submit"), class: "btn btn-primary" %>
+<% end %>

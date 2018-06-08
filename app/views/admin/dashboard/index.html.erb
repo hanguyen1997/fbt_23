@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="content-box-large">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <h3><%= t ".recent_bookings" %></h3>
+        </div>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th><%= t ".tour_name" %></th>
+              <th><%= t ".user_name" %></th>
+              <th><%= t ".booked_at" %></th>
+              <th><%= t ".start day" %></th>
+              <th><%= t ".price" %></th>
+              <th><%= t ".status" %></th>
+              <th><%= t ".action" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @recent_bookings%>
+          </tbody>
+        </table>
+        <%= will_paginate @recent_bookings %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<% if @review.errors.any? %>
+  $('#errors').empty();
+  $('#errors').show();
+  <% @review.errors.full_messages.each do |msg| %>
+    $('#errors').append('<%= msg %>');
+  <% end %>
+<% else %>
+  $('#errors').hide();
+  $('#list_reviews').append('<%= j render(@review) %>');
+<% end %>
+$('#review_content').val('');

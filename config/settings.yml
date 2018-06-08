@@ -1,0 +1,18 @@
+tour:
+  limit_list: 3
+  rating: 7
+  recommended_limit: 6
+  per_page: 5
+  param_newest: "newest"
+  short_descrip: 50
+  length_short_des: 100
+booking:
+  limit: 10
+  per_page: 5
+  min_quantity: 1
+  value: "1"
+rating:
+  min_point: 0
+  max_point: 5
+description_details:
+  limit_price: 1

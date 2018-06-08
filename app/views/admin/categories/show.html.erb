@@ -1,0 +1,26 @@
+<div class="content-box-large">
+  <div class="panel-heading">
+    <div class="page-header show-booking">
+      <h3><%= @category.name %></h3>
+      <span><%= t ".list_tours" %></span>
+      <%= link_to t(".create_new_tour"), "#", class: "btn btn-success" %>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th><%= t ".tour_name" %></th>
+          <th><%= t ".created_at" %></th>
+          <th><%= t ".rating" %></th>
+          <th><%= t ".action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @tours %>
+      </tbody>
+    </table>
+  </div>
+</div>

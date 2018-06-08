@@ -1,0 +1,19 @@
+<tr>
+  <td><%= booking.id %></td>
+  <td><%= booking.description_detail.tour.name %></td>
+  <td><%= l booking.created_at, format: :short %></td>
+  <td><%= l booking.description_detail.start_day, format: :short %></td>
+  <td><%= number_to_currency booking.price %></td>
+  <td><%= booking.quantity %></td>
+  <td><%= number_to_currency booking.total %></td>
+  <td>
+    <span class="<%= booking.status %>"><%= booking.status %></span>
+  </td>
+  <td>
+    <%= link_to t(".view_tour"), tour_path(booking.description_detail.tour_id),
+      class: "btn btn-info" %>
+    <%= link_to t(".write_review"),
+      tour_path(booking.description_detail.tour_id, anchor: "review-block"),
+      class: "btn btn-default" %>
+  </td>
+</tr>

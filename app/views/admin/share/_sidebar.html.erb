@@ -1,0 +1,30 @@
+<div class="sidebar content-box" style="display: block;">
+  <ul class="nav">
+    <li>
+      <%= link_to admin_root_path do %>
+        <i class="glyphicon glyphicon-home"></i><%= t ".dashboard" %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admin_bookings_path do%>
+        <i class="glyphicon glyphicon-list"></i><%= t ".bookings" %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admin_tours_path do%>
+        <i class="glyphicon glyphicon-list"></i><%= t ".tours" %>
+      <% end %>
+    </li>
+    <li>
+      <a href="#"><i class="glyphicon glyphicon-record"></i><%= t ".users" %></a>
+    </li>
+    <li>
+      <%= link_to admin_categories_path do %>
+        <i class="glyphicon glyphicon-pencil"></i><%= t ".categories" %>
+      <% end %>
+    </li>
+    <li>
+      <a href="#"><i class="glyphicon glyphicon-stats"></i><%= t ".statistics" %></a>
+    </li>
+  </ul>
+</div>

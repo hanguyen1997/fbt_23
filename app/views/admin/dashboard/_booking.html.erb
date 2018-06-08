@@ -1,0 +1,10 @@
+<tr>
+  <td><%= booking.id %></td>
+  <td><%= booking.description_detail.tour.name %></td>
+  <td><%= booking.user.name %></td>
+  <td><%= l booking.created_at, format: :short %></td>
+  <td><%= booking.status %></td>
+  <td>
+    <a class="btn btn-default" href="#"><%= t ".view" %></a>
+  </td>
+</tr>

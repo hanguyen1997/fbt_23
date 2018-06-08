@@ -1,0 +1,18 @@
+<%= form_for [:admin, :tour,@description_detail] do |f| %>
+  <%= render "share/error_messages_detail" %>
+  <fieldset>
+    <div class="form-group">
+      <%= f.label :price, t(".price") %>
+      <%= f.text_field :price, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :start_day, t(".start_day") %>
+      <%= f.date_field :start_day %>
+    </div>
+    <div class="form-group">
+      <%= f.label :end_day, t(".end_day") %>
+      <%= f.date_field :end_day %>
+    </div>
+  </fieldset>
+  <%= f.submit t(".submit"), class: "btn btn-primary" %>
+<% end %>

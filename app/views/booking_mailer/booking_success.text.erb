@@ -1,0 +1,10 @@
+<%= t "bookings.mail.hi", name: @user.name %>,
+
+<%= t "bookings.mail.noti_message" %>
+
+<%= t "bookings.new.tour_name" %> <%= @booking.description_detail.tour.name %>
+<%= t "bookings.new.price" %> <%= number_to_currency @booking.price %>
+<%= t "bookings.new.start_day" %> <%= l @booking.description_detail.start_day, format: :date_month_year %>
+<%= t "bookings.new.end_day" %> <%= l @booking.description_detail.end_day, format: :date_month_year %>
+<%= t "bookings.new.quantity" %> <%= @booking.quantity %>
+<%= t "bookings.new.total" %> <%= @booking.total %>$

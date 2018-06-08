@@ -1,0 +1,12 @@
+<% if @tour.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      <%= pluralize @tour.errors.count, t("share.error_messages_detail.error") %>.
+    </div>
+    <ul>
+    <% @tour.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

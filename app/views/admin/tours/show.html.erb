@@ -1,0 +1,54 @@
+<div class="content-box-large">
+  <div class="panel-heading">
+    <div class="page-header show-booking">
+      <h3><%= t ".tour_detail" %></h3>
+    </div>
+    <%= link_to t(".create_detail"), new_admin_tour_description_detail_path(@tour), class: "btn btn-primary pull-right" %>
+  </div>
+
+  <div class="panel-body">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2"><%= t ".tour_no", no: @tour.id %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b><%= t "admin.tours.index.tour_name" %></b></td>
+          <td><%= @tour.name %></td>
+        </tr>
+        <tr>
+          <td><b><%= t "admin.tours.index.short_description" %></b></td>
+          <td><%= @tour.short_description %></td>
+        </tr>
+        <tr>
+          <td><b><%= t "admin.tours.index.category_name" %></b></td>
+          <td><%= @tour.category.name %></td>
+        </tr>
+        <tr>
+          <td><b><%= t "admin.tours.index.itinerary" %></b></td>
+          <td><%= @tour.itinerary %></td>
+        </tr>
+        <tr>
+          <td><b><%= t ".content" %></b></td>
+          <td><%= @tour.content %></td>
+        </tr>
+        <tr>
+          <td><b><%= t ".rating" %></b></td>
+          <td><%= @tour.rating %></td>
+        </tr>
+        <tr>
+          <td><b><%= t "admin.tours.index.image" %></b></td>
+          <td><%= image_tag @tour.image.thumb.url if @tour.image? %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel-body">
+    <table class="table table-bordered">
+      <%= render @description_details %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<thead>
+  <tr>
+    <th colspan="2"><%= t ".detail" %>
+      <%= link_to t(".edit_tour_detail"),
+        edit_admin_tour_description_detail_path(description_detail.tour_id, description_detail),
+        class: "btn btn-primary" %>
+      <%= link_to t(".delete"),
+        admin_tour_description_detail_path(description_detail.tour_id, description_detail),
+        method: :delete, data: { confirm: t(".make_sure") },
+        class: "btn btn-primary pull-right" %>
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><b><%= t ".price" %></b></td>
+    <td><%= number_to_currency description_detail.price %></td>
+  </tr>
+  <tr>
+    <td><b><%= t ".start_day" %></b></td>
+    <td><%= l description_detail.start_day, format: :date_month_year %></td>
+  </tr>
+  <tr>
+    <td><b><%= t ".end_day" %></b></td>
+    <td><%= l description_detail.end_day, format: :date_month_year %></td>
+  </tr>
+</tbody>

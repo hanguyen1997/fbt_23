@@ -1,0 +1,10 @@
+<div id="search" class="container-fluid">
+  <div class="form-inline search-form">
+    <div class="form-group">
+      <%= form_tag tours_path, method: :get do %>
+        <%= text_field_tag :search, params[:search], class: "form-control" %>
+        <%= submit_tag t(".search"), name: nil, class: "btn btn-default btn-search" %>
+      <% end %>
+    </div>
+  </div>
+</div>

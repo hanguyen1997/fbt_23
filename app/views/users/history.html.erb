@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="col-md-10 col-md-offset-1">
+    <% if @bookings.any? %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="content-box-large">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <h3><%= t ".bookings_list" %></h3>
+              </div>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th><%= t ".tour_name" %></th>
+                    <th><%= t ".booked_at" %></th>
+                    <th><%= t ".start day" %></th>
+                    <th><%= t ".price" %></th>
+                    <th><%= t ".quantity" %></th>
+                    <th><%= t ".total" %></th>
+                    <th><%= t ".status" %></th>
+                    <th><%= t ".action" %></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%= render partial: "bookings/booking", collection: @bookings %>
+                </tbody>
+              </table>
+              <%= will_paginate @bookings %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="alert alert-warning" role="alert"><%= t ".booking_not_exist" %></div>
+    <% end %>
+  </div>
+</div>

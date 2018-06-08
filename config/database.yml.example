@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: fbt_23_development
+
+test:
+  <<: *default
+  database: fbt_23_test
+
+production:
+  <<: *default
+  database: fbt_23_production
+  username: fbt_23
+  password: <%= ENV["FBT_23_DATABASE_PASSWORD"] %>

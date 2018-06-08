@@ -1,0 +1,34 @@
+<% content_for :head_decor do %>
+  <%= render "share/slider" %>
+<% end %>
+<div class="container-fluid">
+  <div class="tours popular-tour">
+    <div class="container">
+      <h2><%= t ".newest_tours" %></h2>
+      <p><%= t ".newest_description" %></p>
+      <div class="row">
+        <%= render @newest_tours %>
+        <div class="col-md-12">
+          <%= link_to t(".seemore"), tours_path(filter: Settings.tour.param_newest) %>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h2><%= t ".recommended_tours" %></h2>
+      <p><%= t ".recommended_description" %></p>
+      <div class="row">
+        <%= render @recommended_tours %>
+      </div>
+    </div>
+    <div class="container">
+      <h2><%= t ".popular_tours" %></h2>
+      <p><%= t ".popular_description" %></p>
+      <div class="row">
+        <%= render @tours %>
+        <div class="col-md-12">
+          <a href="#"><%= t ".seemore" %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

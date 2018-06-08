@@ -1,0 +1,15 @@
+<tr>
+  <td><%= tour.id %></td>
+  <td><%= tour.name %></td>
+  <td><%= tour.short_description %></td>
+  <td><%= tour.category.name %></td>
+  <td><%= tour.itinerary %></td>
+  <th><%= image_tag tour.image.thumb.url if tour.image? %>
+  </th>
+  <td>
+    <%= link_to t(".view"), admin_tour_path(tour), class: "btn btn-info" %>
+    <%= link_to t(".edit"), edit_admin_tour_path(tour), class: "btn btn-default" %>
+    <%= link_to t(".delete"), admin_tour_path(tour),
+      method: :delete, data: { confirm: t(".make_sure") }, class: "btn btn-default" %>
+  </td>
+</tr>

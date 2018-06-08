@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t ".tour" %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+  </head>
+
+  <body>
+    <header id="header">
+      <%= render "share/top_navigation" %>
+      <%= yield :head_decor %>
+    </header>
+    <%= render "share/search" %>
+
+    <div id="main-body">
+      <div class="container">
+        <div class="col-md-6 col-md-offset-3">
+          <%= render "share/alert" %>
+        </div>
+      </div>
+      <%= yield %>
+    </div>
+
+    <footer id="footer">
+      <%= render "share/footer" %>
+    </footer>
+
+    <%= javascript_include_tag "bootstrap-rating" %>
+    <%= javascript_include_tag "booking-total" %>
+  </body>
+</html>

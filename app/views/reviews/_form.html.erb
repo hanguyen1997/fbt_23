@@ -1,0 +1,14 @@
+<div class="col-md-12">
+  <%= form_for @review, remote: true do |f| %>
+    <%= hidden_field_tag "review[tour_id]", @tour.id %>
+    <%= hidden_field_tag "review[user_id]", current_user.id %>
+    <div class="form-group">
+      <%= f.text_area :content, class: "form-control", placeholder: t(".leave_review"),
+        rows: "5" %>
+    </div>
+    <div class="text-right">
+      <%= f.submit t(".review"), class: "btn btn-success" %>
+    </div>
+  <% end %>
+  <div id="errors" class="alert alert-danger errors"></div>
+</div>

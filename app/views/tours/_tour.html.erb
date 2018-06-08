@@ -1,0 +1,14 @@
+<div class="col-md-4">
+  <div class="tour">
+    <%= link_to tour do %>
+      <%= image_tag "tour-1.jpg", class: "img-responsive" %>
+    <% end %>
+    <span class="rating">
+      <input type="hidden" class="rating" value="<%= tour.rating %>" data-readonly >
+    </span>
+    <h3 class="tour-name"><%= link_to tour.name, tour %></h3>
+    <p class="short-descrip">
+      <%= truncate tour.short_description, length: Settings.tour.short_descrip %>
+    </p>
+  </div>
+</div>

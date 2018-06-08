@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t ".tour" %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+  </head>
+
+  <body class="login-bg">
+    <nav id="top-nav" class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to t(".tour"), root_path, class: "navbar-brand" %>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <%= render "share/alert" %>
+    </div>
+    <%= yield %>
+  </body>
+</html>

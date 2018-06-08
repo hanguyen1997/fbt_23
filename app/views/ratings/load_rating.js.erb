@@ -1,0 +1,11 @@
+<% if @rating.errors.any? %>
+  $('#errors').empty();
+  $('#errors').show();
+  <% @rating.errors.full_messages.each do |msg| %>
+    $('#errors').append('<%= msg %>');
+  <% end %>
+<% else %>
+  $('#errors').hide();
+  $('#submit-rating').val('<%= @tour.rating %>');
+  $('#success').show();
+<% end %>

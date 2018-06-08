@@ -1,0 +1,64 @@
+<% content_for :head_decor do %>
+  <%= render "share/banner" %>
+<% end %>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="tour-info">
+          <div class="short-descrip">
+            <p><i><%= @tour.short_description %></i></p>
+          </div>
+          <div class="itinerary">
+            <h4><%= t ".itinerary" %></h4>
+            <p><%= @tour.itinerary %></p>
+          </div>
+          <div class="content">
+            <h4><%= t ".content" %></h4>
+            <p><%= @tour.content %></p>
+          </div>
+          <div class="tour-options">
+            <h4><%= t ".options" %></h4>
+            <%= render partial: "detail", collection: @description_details, as: :description_detail %>
+          </div>
+        </div>
+        <% if logged_in? %>
+          <%= render "ratings/form" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div id="review-block" class="tour-reviews">
+        <p><b><%= t ".customer_review" %></b></p>
+        <% if logged_in? %>
+          <%= render "reviews/form" %>
+        <% else %>
+          <div>
+            <%= link_to t(".login"), login_path, class: "btn btn-default btn-yellow" %>
+            <span> <%= t ".to_write_review" %> </span>
+          </div>
+        <% end %>
+        <div class="clearfix"></div>
+        <div class="reviews" id="list_reviews">
+          <%= render @reviews %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="tour-suggest">
+        <span><b><%= t ".also_like" %></b></span>
+        <div class="row">
+          <%= render @tours %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,66 @@
+<div class="content-box-large">
+  <div class="panel-heading">
+    <div class="page-header show-booking">
+      <h3><%= t ".booking_details" %></h3>
+      <% if @booking.pending? %>
+        <%= link_to_update_status @booking, param: "rejected",
+          icon: "glyphicon-remove", btn: "btn-danger", text: t(".reject") %>
+        <%= link_to_update_status @booking, param: "accepted",
+          icon: "glyphicon-ok", btn: "btn-success", text: t(".accept") %>
+      <% end %>
+
+      <% if @booking.rejected? %>
+        <%= link_to_update_status @booking, param: "pending",
+          icon: "glyphicon-refresh", btn: "btn-default", text: t(".resume") %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2"><%= t ".booking_no", no: @booking.id %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b><%= t ".customer_name" %></b></td>
+          <td><%= @booking.user.name %></td>
+        </tr>
+        <tr>
+          <td><b><%= t ".tour_name" %></b></td>
+          <td><%= @booking.description_detail.tour.name %></td>
+        </tr>
+        <tr>
+          <td><b><%= t ".booked_at" %></b></td>
+          <td><%= l @booking.created_at, format: :short %></td>
+        </tr>
+        <tr>
+          <td><b><%= t ".start_day" %></b></td>
+          <td><%= l @booking.description_detail.start_day, format: :short %></td>
+        </tr>
+        <tr>
+          <td><b><%= t ".end_day" %></b></td>
+          <td><%= l @booking.description_detail.end_day, format: :short %></td>
+        </tr>
+        <tr>
+          <td><b><%= t ".price" %></b></td>
+          <td><%= number_to_currency @booking.price %></td>
+        </tr>
+        <tr>
+          <td><b><%= t ".quantity" %></b></td>
+          <td><%= @booking.quantity %></td>
+        </tr>
+        <tr>
+          <td><b><%= t ".total" %></b></td>
+          <td><%= number_to_currency @booking.total %></td>
+        </tr>
+        <tr>
+          <td><b><%= t ".status" %></b></td>
+          <td><span class="<%= @booking.status %>"><%= @booking.status %></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

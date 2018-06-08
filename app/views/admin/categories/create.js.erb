@@ -1,0 +1,18 @@
+<% if @category.errors.any? %>
+  $('#success').hide();
+  $('#errors').empty();
+  $('#errors').show();
+  <% @category.errors.full_messages.each do |msg| %>
+    $('#errors').append('<%= msg %>');
+  <% end %>
+<% else %>
+  $('#errors').hide();
+  $('#success').empty();
+  $('#success').show();
+  $('#success').append('<%= t "alert.create_category_success" %>');
+  <% if @category.parent_id.nil? %>
+    $('#list-categories').append('<%= j render(@category) %>');
+  <% else %>
+    $('#cate-<%= @category.parent_id %>').append('<%= j render(@category) %>');
+  <% end %>
+<% end %>

@@ -1,0 +1,37 @@
+<div class="page-content container">
+  <div class="row">
+      <div class="login-wrapper">
+        <div class="box">
+          <h6><%= t ".booking_tour" %></h6>
+          <%= form_for @booking do |f| %>
+            <%= hidden_field_tag "booking[description_detail_id]", @description_detail.id %>
+            <%= hidden_field_tag "booking[user_id]", current_user.id %>
+            <%= hidden_field_tag "booking[price]", @description_detail.price, id: "price" %>
+            <table class="table table-hover booking-form">
+             <thead>
+                <tr>
+                  <th><%= t ".tour_name" %></th>
+                  <th><%= t ".price" %></th>
+                  <th><%= t ".start_day" %></th>
+                  <th><%= t ".end_day" %></th>
+                  <th><%= t ".quantity" %></th>
+                  <th><%= t ".total" %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= @description_detail.tour.name %></td>
+                  <td><%= number_to_currency @description_detail.price %></td>
+                  <td><%= l @description_detail.start_day, format: :date_month_year %></td>
+                  <td><%= l @description_detail.end_day, format: :date_month_year %></td>
+                  <td><%= f.text_field :quantity, id: "quantity", class: "qTy", value: Settings.booking.value %></td>
+                  <td id="total"><%= number_to_currency @description_detail.price %></td>
+                </tr>
+              </tbody>
+            </table>
+            <%= f.submit t(".book") %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<h3><%= t "bookings.mail.hi", name: @user.name %>,</h3>
+
+<p><%= t "bookings.mail.response_mail_content", status: @booking.status %></p>
+
+<table>
+ <thead>
+    <tr>
+      <th><%= t "bookings.new.tour_name" %></th>
+      <th><%= t "bookings.new.price" %></th>
+      <th><%= t "bookings.new.start_day" %></th>
+      <th><%= t "bookings.new.end_day" %></th>
+      <th><%= t "bookings.new.quantity" %></th>
+      <th><%= t "bookings.new.total" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @booking.description_detail.tour.name %></td>
+      <td><%= number_to_currency @booking.price %></td>
+      <td><%= l @booking.description_detail.start_day, format: :date_month_year %></td>
+      <td><%= l @booking.description_detail.end_day, format: :date_month_year %></td>
+      <td><%= @booking.quantity %></td>
+      <td><%= number_to_currency @booking.total %></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><%= t "bookings.mail.have_a_nice_trip" if @booking.accepted? %></p>

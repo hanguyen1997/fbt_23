@@ -1,0 +1,11 @@
+<div class="review">
+  <p><b><%= review.user.name %></b></p>
+  <span class="ago">
+    <i><%= t ".ago", time: time_ago_in_words(review.updated_at) %></i>
+  </span>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= review.content %>
+    </div>
+  </div>
+</div>
