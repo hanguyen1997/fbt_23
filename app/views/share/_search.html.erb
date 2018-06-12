@@ -1,9 +1,20 @@
 <div id="search" class="container-fluid">
   <div class="form-inline search-form">
     <div class="form-group">
-      <%= form_tag tours_path, method: :get do %>
-        <%= text_field_tag :search, params[:search], class: "form-control" %>
-        <%= submit_tag t(".search"), name: nil, class: "btn btn-default btn-search" %>
+      <%= search_form_for @search do |f| %>
+        <%= f.label :name_or_itinerary_cont, t(".name") %>
+        <%= f.text_field :name_or_itinerary_cont %><br>
+        <div class="field">
+          <%= f.label :price_gteq, t(".price_between") %>
+          <%= f.text_field :description_details_price_gteq %><br>
+          <%= f.label :price_lteq, t(".and") %>
+          <%= f.text_field :description_details_price_lteq %><br>
+        </div>
+        <div class="field">
+          <%= f.label :start_day_eq, t(".start_day") %>
+          <%= f.date_field :description_details_start_day_eq %><br>
+        </div>
+        <%= submit_tag t(".search"), class: "btn btn-default btn-search" %>
       <% end %>
     </div>
   </div>

@@ -50,6 +50,10 @@ en:
       logout: "Log out"
     search:
       search: "Search"
+      name: "Tour name/Itinerary"
+      price_between: "Price between"
+      and: "and"
+      start_day: "Start day"
     error_messages_detail:
       error: "error"
   sessions:
