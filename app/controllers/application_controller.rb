@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
   before_action :load_categories
   before_action :search
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to_root exception
+  end
+
   def load_categories
     @super_categories = Category.available.super
   end
@@ -29,5 +33,13 @@ class ApplicationController < ActionController::Base
     add_attrs = [:name, :email, :address, :phone_number]
     devise_parameter_sanitizer.permit :sign_up, keys: add_attrs
     devise_parameter_sanitizer.permit :account_update, keys: add_attrs
+  end
+
+  def redirect_to_root exception
+    if logged_in_as_admin?
+      redirect_to admin_root_url, alert: exception.message
+    else
+      redirect_to root_url, alert: exception.message
+    end
   end
 end

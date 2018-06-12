@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  authorize_resource
+
   def create
     @review = Review.new review_params
     @review.save
