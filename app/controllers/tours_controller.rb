@@ -1,5 +1,6 @@
 class ToursController < ApplicationController
   before_action :load_tour, only: :show
+  authorize_resource
 
   def show
     @description_details = @tour.description_details.available.hidden_expired_detail
@@ -22,8 +23,7 @@ class ToursController < ApplicationController
   def load_tour
     @tour = Tour.available.find_by id: params[:id]
     return if @tour
-    flash[:danger] = t ".error_noti"
-    redirect_to root_url
+    redirect_to root_path, alert: t(".error_noti")
   end
 
   def able_to_review_and_rating

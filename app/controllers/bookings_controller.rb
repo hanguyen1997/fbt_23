@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
   before_action :load_description_detail, only: :new
+  authorize_resource
 
   def new
     @booking = Booking.new
@@ -27,7 +28,6 @@ class BookingsController < ApplicationController
   def load_description_detail
     @description_detail = DescriptionDetail.available.find_by id: params[:id]
     return if @description_detail
-    flash[:danger] = t ".danger_mess"
-    redirect_to root_url
+    redirect_to root_url, alert: t(".danger_mess")
   end
 end

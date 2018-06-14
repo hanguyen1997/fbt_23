@@ -1,6 +1,7 @@
 module Admin
   class CategoriesController < BaseController
     before_action :load_category, only: %i(show destroy)
+    authorize_resource
 
     def index
       @categories = Category.all

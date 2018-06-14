@@ -2,6 +2,7 @@ module Admin
   class ToursController < BaseController
     before_action :load_tour, except: %i(index new create)
     before_action :load_categories, except: %i(index show destroy)
+    authorize_resource
 
     def index
       @tours = Tour.newest_tour.available.paginate page: params[:page], per_page: Settings.tour.per_page

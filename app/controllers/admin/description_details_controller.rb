@@ -2,6 +2,7 @@ module Admin
   class DescriptionDetailsController < BaseController
     before_action :load_description_detail, only: %i(edit update destroy)
     before_action :load_tour, only: %i(new create)
+    authorize_resource
 
     def new
       @description_detail = DescriptionDetail.new
@@ -56,7 +57,7 @@ module Admin
     end
 
     def load_tour
-      @tour = Tour.available.hidden_expired_detail.find_by id: params[:tour_id]
+      @tour = Tour.available.find_by id: params[:tour_id]
       return if @tour
       flash[:danger] = t ".error_tour_id"
       redirect_to admin_tours_url

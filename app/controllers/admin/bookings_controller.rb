@@ -1,6 +1,7 @@
 module Admin
   class BookingsController < BaseController
     before_action :load_booking, only: %i(show update)
+    authorize_resource
 
     def index
       @bookings = Booking.created_at_sort
