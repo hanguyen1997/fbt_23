@@ -17,6 +17,15 @@ gem "jbuilder", "~> 2.5"
 group :development, :test do
   gem "byebug", platform: :mri
   gem "mysql2", ">= 0.3.18", "< 0.6.0"
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+end
+
+group :test do
+  gem "capybara"
+  gem "guard-rspec"
+  gem "launchy"
+  gem "shoulda-matchers"
 end
 
 group :development do
