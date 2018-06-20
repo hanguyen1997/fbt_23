@@ -11,8 +11,12 @@ booking:
   per_page: 5
   min_quantity: 1
   value: "1"
+  quantity:
+    not_to_allow_less_1: 0
 rating:
   min_point: 0
   max_point: 5
 description_details:
   limit_price: 1
+user:
+  min_pass_length: 6
